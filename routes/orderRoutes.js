@@ -13,11 +13,11 @@ const {
   deleteOrder,
 } = require("../controllers/orderController");
 
-// User Routes
+// User Routes---------------------------------//
 router.post("/", verifyToken, authorizeRoles("user", "admin"), placeOrder);
 router.get("/myorders", verifyToken, authorizeRoles("user", "admin"), getMyOrders);
 
-// Admin Routes
+// Admin Routes-------//
 router.get("/", verifyToken, authorizeRoles("admin"), getAllOrders);
 router.put("/:id", verifyToken, authorizeRoles("admin"), updateOrderStatus);
 router.delete("/:id", verifyToken, authorizeRoles("admin"), deleteOrder);

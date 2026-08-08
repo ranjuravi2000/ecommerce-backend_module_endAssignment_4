@@ -13,11 +13,11 @@ const {
   deleteProduct,
 } = require("../controllers/productController");
 
-// Public Routes
+// Public Routes---------
 router.get("/", getProducts);
 router.get("/:id", getProductById);
 
-// Admin Only
+// Admin Only----------
 router.post("/", verifyToken, authorizeRoles("admin"), createProduct);
 router.put("/:id", verifyToken, authorizeRoles("admin"), updateProduct);
 router.delete("/:id", verifyToken, authorizeRoles("admin"), deleteProduct);

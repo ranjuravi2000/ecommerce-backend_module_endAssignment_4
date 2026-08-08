@@ -1,7 +1,7 @@
 const Order = require("../models/orderModel");
 const Product = require("../models/productModel");
 
-// Place Order
+// Place Order----------
 const placeOrder = async (req, res) => {
   try {
     const { product, quantity } = req.body;
@@ -34,7 +34,7 @@ const placeOrder = async (req, res) => {
   }
 };
 
-// Get Logged-in User Orders
+
 const getMyOrders = async (req, res) => {
   try {
     const orders = await Order.find({ user: req.user.id })
@@ -49,7 +49,7 @@ const getMyOrders = async (req, res) => {
   }
 };
 
-// Get All Orders (Admin)
+// Get All Orders -------------
 const getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find()
@@ -64,7 +64,7 @@ const getAllOrders = async (req, res) => {
   }
 };
 
-// Update Order Status
+// Update Order Status------------
 const updateOrderStatus = async (req, res) => {
   try {
     const order = await Order.findByIdAndUpdate(
@@ -90,7 +90,7 @@ const updateOrderStatus = async (req, res) => {
   }
 };
 
-// Delete Order
+// Delete Order------------//
 const deleteOrder = async (req, res) => {
   try {
     const order = await Order.findByIdAndDelete(req.params.id);

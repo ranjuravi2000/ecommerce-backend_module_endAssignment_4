@@ -1,6 +1,6 @@
 const Product = require("../models/productModel");
 
-// Recommend products by category
+// Recommend products by category----------
 const getRecommendations = async (req, res) => {
     try {
 
